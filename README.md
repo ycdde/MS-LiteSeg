@@ -2,7 +2,7 @@
 
 Official Pytorch implementations for MS-LiteSeg. 
 
-For installation, dataset preparation, training, and evaluation, please refer to the [MMSegmentation official documentation](https://github.com/open-mmlab/mmsegmentation).  
+For installation, dataset preparation, training, and evaluation, please refer to the [MMSegmentation documentation](https://github.com/open-mmlab/mmsegmentation).  
 
 ## File Placement Guide  
 
