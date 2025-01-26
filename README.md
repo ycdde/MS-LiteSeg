@@ -8,7 +8,7 @@ For installation, dataset preparation, training, and evaluation, please refer to
 
 Place the provided files in the following directories within your MMSegmentation project:
 
-- **Config files** (`MS-LiteSeg_potsdam.py`, `MS-LiteSeg_vaihingen.py`) → `configs/`
+- **Config files** (`MS-LiteSeg_potsdam.py`, `MS-LiteSeg_vaihingen.py`) → `configs/msliteseg`
 - **Neck** (`dfa.py`) → `mmseg/models/necks/`
 - **Decoder** (`lightsegformer_head.py`) → `mmseg/models/decode_heads/`
 
