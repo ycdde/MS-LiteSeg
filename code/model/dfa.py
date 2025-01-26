@@ -5,12 +5,12 @@ from mmseg.registry import MODELS
 class DFAttention(nn.Module):
     def __init__(self, in_channels, reduction_ratio=16):
         super(DFAttention, self).__init__()
-        self.local_attention = nn.Sequential(
+        self.local_flow = nn.Sequential(
             nn.Conv2d(in_channels, in_channels, 3, padding=1, groups=in_channels),
             nn.BatchNorm2d(in_channels),
             nn.ReLU(inplace=True)
         )
-        self.global_attention = nn.Sequential(
+        self.global_flow = nn.Sequential(
             nn.AdaptiveAvgPool2d(1),
             nn.Conv2d(in_channels, in_channels // reduction_ratio, 1),
             nn.ReLU(inplace=True),
@@ -19,8 +19,8 @@ class DFAttention(nn.Module):
         )
 
     def forward(self, x):
-        local_feat = self.local_attention(x)
-        global_context = self.global_attention(x)
+        local_feat = self.local_flow(x)
+        global_context = self.global_flow(x)
         out = local_feat * global_context
         return x + out
 
